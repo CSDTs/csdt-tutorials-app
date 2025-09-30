@@ -1,0 +1,3 @@
+# Create your first arc by dragging in blocks into the scripting panel
+
+Drag the “when clicked” Control block to the right (click and hold while moving the mouse).. The “when clicked” block starts the program.. Now you can create a script to create an arc.. The “angle” Motion block will tell the middle of the arc which directions to point.. The “go to” Motion block will tell the arc where to move along the x, y, and z axes.. The “clear” Pen block will erase all prior drawing on the stage.. The “pen size” Pen block will allow you to set the diameter of the arc's cross section. The “arc” Pen block will allow you to draw an arc by specifying the width and height..

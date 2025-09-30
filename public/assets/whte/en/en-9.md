@@ -1,0 +1,6 @@
+# Repeat your previous code to create a new design
+
+- We are going to repeat the previous code 2 times, using another "repeat" block.
+- Mode the "set variable" and the first "repeat" block into the new one. Set the number of iterations to 2.
+- Use a "rotate by" block below the first "repeat" and set it to -90.
+- Use a "go to bead x" block below the "rotate" to get us back to the y axis.

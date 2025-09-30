@@ -1,0 +1,3 @@
+# Create another ring of flowers, but reflected
+
+Within Anishinaabe quilts, you may have noticed that some images are reflected relative to their location. You can do the same thing, using a ![""](./img/reflect.png) This block will flip your sprite on its y-axis based on its relative location.
