@@ -2,6 +2,11 @@ import type { Tutorial, TutorialStep } from "@/data/tutorial-data";
 import { getStepContentUrls } from "@/lib/content";
 import { createContext, type ReactNode, useContext, useMemo, useState } from "react";
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+type TutorialSettings = {
+	[key: string]: any;
+};
+
 type TutorialContextType = {
 	tutorial: Tutorial | null;
 	setTutorial: (tutorial: Tutorial | null) => void;
@@ -11,6 +16,11 @@ type TutorialContextType = {
 	nextStep: () => void;
 	prevStep: () => void;
 	currentStepContent: { [key: string]: string } | null | undefined;
+	ide: any;
+	setIde: (ide: any) => void;
+	settings: TutorialSettings;
+	setSettings: (settings: TutorialSettings) => void;
+	callIdeFunction: (functionName: string, ...args: any[]) => any;
 };
 
 const TutorialContext = createContext<TutorialContextType | undefined>(undefined);
@@ -18,6 +28,8 @@ const TutorialContext = createContext<TutorialContextType | undefined>(undefined
 export const TutorialProvider = ({ children }: { children: ReactNode }) => {
 	const [tutorial, setTutorial] = useState<Tutorial | null>(null);
 	const [currentStep, setCurrentStep] = useState<number>(0);
+	const [ide, setIde] = useState<any>(null);
+	const [settings, setSettings] = useState<TutorialSettings>({});
 
 	const nextStep = () => {
 		if (tutorial && currentStep < tutorial.steps.length - 1) {
@@ -28,6 +40,20 @@ export const TutorialProvider = ({ children }: { children: ReactNode }) => {
 	const prevStep = () => {
 		if (currentStep > 0) {
 			setCurrentStep(currentStep - 1);
+		}
+	};
+
+	const callIdeFunction = (functionName: string, ...args: any[]) => {
+		if (!ide) {
+			console.warn(`IDE not available. Cannot call function: ${functionName}`);
+			return undefined;
+		}
+
+		if (typeof ide[functionName] === "function") {
+			return ide[functionName](...args);
+		} else {
+			console.warn(`Function ${functionName} not found on IDE object`);
+			return undefined;
 		}
 	};
 
@@ -47,12 +73,18 @@ export const TutorialProvider = ({ children }: { children: ReactNode }) => {
 				nextStep,
 				prevStep,
 				currentStepContent,
+				ide,
+				setIde,
+				settings,
+				setSettings,
+				callIdeFunction,
 			}}>
 			{children}
 		</TutorialContext.Provider>
 	);
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useTutorial = () => {
 	const context = useContext(TutorialContext);
 	if (context === undefined) {

@@ -1,17 +1,6 @@
 "use client";
 
-import {
-	IconChevronLeft,
-	IconChevronRight,
-	IconCirclePlus,
-	IconDatabase,
-	IconFileWord,
-	IconHelp,
-	IconInnerShadowTop,
-	IconListDetails,
-	IconReport,
-	IconSettings,
-} from "@tabler/icons-react";
+import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import * as React from "react";
 
 import { NumericStepSelector } from "@/components/content/numeric-step-selector";
@@ -27,75 +16,22 @@ import {
 
 import { StepMarkdown } from "@/components/content/step-markdown";
 import { Button } from "@/components/ui/button";
+import { sidebarData } from "@/data/sidebar-data";
 import { NavSecondary } from "@/layout/nav-secondary";
 import { useTutorial } from "@/providers/tutorial-provider";
-
-const data = {
-	user: {
-		name: "shadcn",
-		email: "m@example.com",
-		avatar: "/avatars/shadcn.jpg",
-	},
-
-	navSecondary: [
-		{
-			title: "Settings",
-			url: "#",
-			icon: IconSettings,
-		},
-		{
-			title: "Get Help",
-			url: "https://csdt.org/culture/help/index.html",
-			icon: IconHelp,
-		},
-		{
-			title: "Tutorial Outline",
-			url: "#",
-			icon: IconListDetails,
-		},
-		{
-			title: "View Additional Tutorials",
-			url: "#",
-			icon: IconCirclePlus,
-		},
-	],
-	documents: [
-		{
-			name: "Data Library",
-			url: "#",
-			icon: IconDatabase,
-		},
-		{
-			name: "Reports",
-			url: "#",
-			icon: IconReport,
-		},
-		{
-			name: "Word Assistant",
-			url: "#",
-			icon: IconFileWord,
-		},
-	],
-};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 	const { currentStepContent, tutorial, currentStepIndex, nextStep, prevStep } = useTutorial();
 
-	// Use a key on the <video> element to force it to reload when the video src changes.
 	const videoKey = currentStepContent?.video || undefined;
 
 	return (
-		<Sidebar collapsible="offcanvas" {...props}>
+		<Sidebar collapsible="offcanvas" className="second-step" {...props}>
 			<SidebarHeader>
 				<SidebarMenu>
 					<SidebarMenuItem>
-						<SidebarMenuButton asChild className="data-[slot=sidebar-menu-button]:!p-1.5">
-							<div className="flex items-center gap-2">
-								{/* <a href="/">
-									<IconInnerShadowTop className="!size-5" />
-									<span className="text-base font-semibold">CSDT Tutorials</span>
-								</a> */}
-
+						<SidebarMenuButton asChild className="data-[slot=sidebar-menu-button]:!p-1.5 hover:bg-transparent">
+							<div className="flex items-center gap-2" id="tour1-step1">
 								<a href="https://www.nsf.gov/">
 									<span className="sr-only">NSF</span>
 									<img src={"./nsf.gif"} className="size-9" alt="NSF" />
@@ -130,13 +66,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 					)}
 				</NumericStepSelector>
 
-				{/* <NavMain items={data.navMain} />
-				<NavDocuments items={data.documents} /> */}
-				<NavSecondary items={data.navSecondary} className="mt-auto" />
+				<NavSecondary items={sidebarData.navSecondary} className="mt-auto sixth-step" />
 			</SidebarContent>
-			<SidebarFooter className="flex flex-row items-center justify-between gap-2">
-				{/* <NavUser user={data.user} /> */}
-
+			<SidebarFooter className="flex flex-row items-center justify-between gap-2 third-step">
 				<Button variant="outline" className="flex-1" disabled={currentStepIndex === 0} onClick={prevStep}>
 					<IconChevronLeft /> Previous
 				</Button>

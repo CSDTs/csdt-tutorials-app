@@ -18,10 +18,10 @@ const prefixContent = (content: string, prefix: string, index: number) => {
 	}
 
 	if (content === "nextSteps") {
-		return `/assets/${prefix}${prefix.split("/")[1]}-next-steps.md`;
+		return `${import.meta.env.PROD ? "/assets/tutorials/assets/" : "/assets/"}${prefix}${prefix.split("/")[1]}-next-steps.md`;
 	}
 
-	return `/assets/${prefix}${prefix.split("/")[1]}-${index + 1}.md`;
+	return `${import.meta.env.PROD ? "/assets/tutorials/assets/" : "/assets/"}${prefix}${prefix.split("/")[1]}-${index + 1}.md`;
 };
 
 export const getStepContentUrls = ({ tutorial }: { tutorial: Tutorial }) => {

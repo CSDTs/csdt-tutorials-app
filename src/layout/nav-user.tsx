@@ -2,18 +2,17 @@
 
 import {
 	IconBook,
-	IconChalkboard,
 	IconChalkboardTeacher,
-	IconCreditCard,
 	IconDotsVertical,
+	IconLogin,
 	IconLogout,
-	IconNotification,
 	IconPhoto,
 	IconUser,
-	IconUserCircle,
+	IconUserPlus,
 } from "@tabler/icons-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -33,9 +32,29 @@ export function NavUser({
 		email?: string;
 		avatar?: string;
 		id: number;
-	};
+	} | null;
 }) {
 	const { isMobile } = useSidebar();
+
+	// If no user is logged in, show login/sign up buttons
+	if (!user || !user.name) {
+		return (
+			<div className="flex items-center gap-2">
+				<Button variant="ghost" size="sm" asChild>
+					<a href="/accounts/login/" className="flex items-center gap-2">
+						<IconLogin className="size-4" />
+						Login
+					</a>
+				</Button>
+				<Button variant="outline" size="sm" asChild>
+					<a href="/accounts/signup/" className="flex items-center gap-2">
+						<IconUserPlus className="size-4" />
+						Sign Up
+					</a>
+				</Button>
+			</div>
+		);
+	}
 
 	return (
 		<SidebarMenu>
@@ -45,10 +64,10 @@ export function NavUser({
 						<SidebarMenuButton
 							size="lg"
 							className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
-							<Avatar className="h-8 w-8 rounded-lg grayscale">
+							<Avatar className="h-8 w-8 rounded-lg grayscale ">
 								<AvatarImage src={user.avatar} alt={user.name} />
 								<AvatarFallback className="rounded-lg">
-									<IconUser className="size-4" />
+									<IconUser className="size-4 text-accent-foreground" />
 								</AvatarFallback>
 							</Avatar>
 							<div className="grid flex-1 text-left text-sm leading-tight">

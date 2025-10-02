@@ -1,17 +1,8 @@
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { useCSDTUser } from "@/hooks/use-csdt-user";
 import { NavUser } from "./nav-user";
-import { NavUserSimplified } from "./nav-user-simplified";
-
-const data = {
-	user: {
-		name: "shadcn",
-		email: "m@example.com",
-		avatar: "/avatars/shadcn.jpg",
-	},
-};
 
 export function SiteHeader({ title }: { title: string }) {
 	const currentUser = useCSDTUser();
@@ -20,13 +11,18 @@ export function SiteHeader({ title }: { title: string }) {
 			<div className="flex w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
 				<SidebarTrigger className="-ml-1" />
 				<Separator orientation="vertical" className="mx-2 data-[orientation=vertical]:h-4" />
-				<h1 className="text-base font-medium">{title ?? "Welcome to CSDT Tutorials!"}</h1>
+				<h1 className="text-base font-medium truncate">{title ?? "Welcome to CSDT Tutorials!"}</h1>
 				<div className="ml-auto flex items-center gap-2">
+					<ThemeToggle />
 					<NavUser
-						user={{
-							name: currentUser?.username ?? "",
-							id: currentUser?.id ?? 0,
-						}}
+						user={
+							currentUser
+								? {
+										name: currentUser.username,
+										id: currentUser.id,
+									}
+								: null
+						}
 					/>
 					{/* <Button var}iant="ghost" asChild size="sm" className="hidden sm:flex">
 						<a

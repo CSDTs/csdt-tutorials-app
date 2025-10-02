@@ -1,27 +1,17 @@
 "use client";
 
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuLabel,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import {
 	SidebarGroup,
 	SidebarGroupContent,
 	SidebarMenu,
-	SidebarMenuAction,
 	SidebarMenuButton,
 	SidebarMenuItem,
-	useSidebar,
 } from "@/components/ui/sidebar";
 import type { TutorialStep } from "@/data/tutorial-data";
 import { useTutorial } from "@/providers/tutorial-provider";
-import { IconDots, IconFolder, IconShare3, IconTrash, type Icon } from "@tabler/icons-react";
+import { type Icon } from "@tabler/icons-react";
 import * as React from "react";
 import { useState } from "react";
 
@@ -35,78 +25,84 @@ export function NavSecondary({
 		icon: Icon;
 	}[];
 } & React.ComponentPropsWithoutRef<typeof SidebarGroup>) {
-	const { isMobile } = useSidebar();
 	const { tutorial, setCurrentStep, currentStepIndex } = useTutorial();
 	const [open, setOpen] = useState(false);
 	const [tutorialsOpen, setTutorialsOpen] = useState(false);
+
+	const source = import.meta.env.PROD ? `/tutorials/index.html?name=` : `./?name=`;
 	return (
 		<SidebarGroup {...props}>
 			<SidebarGroupContent>
 				<SidebarMenu>
 					{items.map((item) => {
 						if (item.title === "Settings") {
-							return (
-								<DropdownMenu key={item.title}>
-									<DropdownMenuTrigger asChild>
-										<SidebarMenuItem>
-											<SidebarMenuButton asChild>
-												<a href={item.url}>
-													<item.icon />
-													<span>{item.title}</span>
-												</a>
-											</SidebarMenuButton>
-											<SidebarMenuAction showOnHover className="data-[state=open]:bg-accent rounded-sm">
-												<IconDots />
-												<span className="sr-only">More</span>
-											</SidebarMenuAction>
-										</SidebarMenuItem>
-									</DropdownMenuTrigger>
-									<DropdownMenuContent
-										className="w-72 rounded-lg"
-										side={isMobile ? "bottom" : "right"}
-										align={isMobile ? "end" : "start"}>
-										<DropdownMenuLabel>Tutorial Settings</DropdownMenuLabel>
-										<DropdownMenuItem>
-											<IconFolder />
-											<span>Toggle Split Screen Layout</span>
-										</DropdownMenuItem>{" "}
-										<DropdownMenuItem>
-											<IconFolder />
-											<span>Start Layout Tour</span>
-										</DropdownMenuItem>
-										<DropdownMenuLabel>CSnap! Settings</DropdownMenuLabel>
-										<DropdownMenuItem>
-											<IconShare3 />
-											<span>Toggle Single Palette</span>
-										</DropdownMenuItem>
-										<DropdownMenuItem>
-											<IconShare3 />
-											<span>Toggle Corral Bar</span>
-										</DropdownMenuItem>
-										<DropdownMenuItem>
-											<IconShare3 />
-											<span>Toggle Tabs</span>
-										</DropdownMenuItem>
-										<DropdownMenuItem>
-											<IconShare3 />
-											<span>Toggle Sprite Bar</span>
-										</DropdownMenuItem>
-										<DropdownMenuSeparator />
-										<DropdownMenuLabel>Misc Settings</DropdownMenuLabel>
-										<DropdownMenuItem variant="destructive">
-											<IconTrash />
-											<span>Reset Layout Tour Prompt</span>
-										</DropdownMenuItem>
-									</DropdownMenuContent>
-								</DropdownMenu>
-							);
+							return;
+							// return (
+							// 	<DropdownMenu key={item.title}>
+							// 		<DropdownMenuTrigger asChild>
+							// 			<SidebarMenuItem>
+							// 				<SidebarMenuButton asChild>
+							// 					<a href={item.url}>
+							// 						<item.icon />
+							// 						<span>{item.title}</span>
+							// 					</a>
+							// 				</SidebarMenuButton>
+							// 				<SidebarMenuAction showOnHover className="data-[state=open]:bg-accent rounded-sm">
+							// 					<IconDots />
+							// 					<span className="sr-only">More</span>
+							// 				</SidebarMenuAction>
+							// 			</SidebarMenuItem>
+							// 		</DropdownMenuTrigger>
+							// 		<DropdownMenuContent
+							// 			className="w-72 rounded-lg"
+							// 			side={isMobile ? "bottom" : "right"}
+							// 			align={isMobile ? "end" : "start"}>
+							// 			<DropdownMenuLabel>Tutorial Settings</DropdownMenuLabel>
+							// 			<DropdownMenuItem>
+							// 				<IconFolder />
+							// 				<span>Toggle Split Screen Layout</span>
+							// 			</DropdownMenuItem>{" "}
+							// 			<DropdownMenuItem>
+							// 				<IconFolder />
+							// 				<span>Start Layout Tour</span>
+							// 			</DropdownMenuItem>
+							// 			<DropdownMenuLabel>CSnap! Settings</DropdownMenuLabel>
+							// 			<DropdownMenuItem>
+							// 				<IconShare3 />
+							// 				<span>Toggle Single Palette</span>
+							// 			</DropdownMenuItem>
+							// 			<DropdownMenuItem onClick={() => ide?.toggleControls(true)}>
+							// 				<IconShare3 />
+							// 				<span>Show Controls</span>
+							// 			</DropdownMenuItem>
+							// 			<DropdownMenuItem onClick={() => ide?.toggleControls(false)}>
+							// 				<IconShare3 />
+							// 				<span>Show Controls</span>
+							// 			</DropdownMenuItem>
+							// 			<DropdownMenuItem>
+							// 				<IconShare3 />
+							// 				<span>Toggle Tabs</span>
+							// 			</DropdownMenuItem>
+							// 			<DropdownMenuItem>
+							// 				<IconShare3 />
+							// 				<span>Toggle Sprite Bar</span>
+							// 			</DropdownMenuItem>
+							// 			<DropdownMenuSeparator />
+							// 			<DropdownMenuLabel>Misc Settings</DropdownMenuLabel>
+							// 			<DropdownMenuItem variant="destructive">
+							// 				<IconTrash />
+							// 				<span>Reset Layout Tour Prompt</span>
+							// 			</DropdownMenuItem>
+							// 		</DropdownMenuContent>
+							// 	</DropdownMenu>
+							// );
 						} else if (item.title === "Tutorial Outline") {
 							// Add state to control the Sheet open/close
 
 							return (
 								<Sheet key={item.title} open={open} onOpenChange={setOpen}>
 									<SheetTrigger asChild>
-										<SidebarMenuItem>
+										<SidebarMenuItem className="seventh-step">
 											<SidebarMenuButton asChild>
 												<a href={item.url}>
 													<item.icon />
@@ -165,7 +161,7 @@ export function NavSecondary({
 											</SidebarMenuButton>
 										</SidebarMenuItem>
 									</SheetTrigger>
-									<SheetContent side="left" className="max-w-md w-full">
+									<SheetContent side="left" className="max-w-md w-full ">
 										<SheetHeader>
 											<SheetTitle>Additional Tutorials</SheetTitle>
 										</SheetHeader>
@@ -176,7 +172,7 @@ export function NavSecondary({
 													<h3 className="text-sm font-semibold text-foreground mb-2 px-3">Adinkra</h3>
 													<div className="space-y-1">
 														<a
-															href="./?name=adinkra-akoma"
+															href={source + "adinkra-akoma"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -184,7 +180,7 @@ export function NavSecondary({
 															<span className="truncate">Akoma</span>
 														</a>
 														<a
-															href="./?name=adinkra-ananse"
+															href={source + "adinkra-ananse"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -192,7 +188,7 @@ export function NavSecondary({
 															<span className="truncate">Ananse</span>
 														</a>
 														<a
-															href="./?name=adinkra-mpuannum"
+															href={source + "adinkra-mpuannum"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -200,7 +196,7 @@ export function NavSecondary({
 															<span className="truncate">Mpuannum</span>
 														</a>
 														<a
-															href="./?name=adinkra-sepow"
+															href={source + "adinkra-sepow"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -210,12 +206,12 @@ export function NavSecondary({
 													</div>
 												</div>
 
-												{/* Anishinaabe Arcs Section */}
+												{/* Anishinaabe Arcs Section
 												<div>
 													<h3 className="text-sm font-semibold text-foreground mb-2 px-3">Anishinaabe Arcs</h3>
 													<div className="space-y-1">
 														<a
-															href="./?name=anishinaabe-arcs-main"
+															href={source + "anishinaabe-arcs-main"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -223,14 +219,14 @@ export function NavSecondary({
 															<span className="truncate">Main</span>
 														</a>
 													</div>
-												</div>
+												</div> */}
 
 												{/* Bead Loom Section */}
 												<div>
 													<h3 className="text-sm font-semibold text-foreground mb-2 px-3">Bead Loom</h3>
 													<div className="space-y-1">
 														<a
-															href="./?name=beadloom-main"
+															href={source + "beadloom-main"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -245,7 +241,7 @@ export function NavSecondary({
 													<h3 className="text-sm font-semibold text-foreground mb-2 px-3">Cornrows</h3>
 													<div className="space-y-1">
 														<a
-															href="./?name=cornrow-main"
+															href={source + "cornrows-main"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -253,7 +249,7 @@ export function NavSecondary({
 															<span className="truncate">Main</span>
 														</a>
 														<a
-															href="./?name=cornrow-loops"
+															href={source + "cornrows-loops"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -261,7 +257,7 @@ export function NavSecondary({
 															<span className="truncate">Loops</span>
 														</a>
 														<a
-															href="./?name=cornrow-parameters"
+															href={source + "cornrows-parameters"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -269,7 +265,7 @@ export function NavSecondary({
 															<span className="truncate">Params</span>
 														</a>
 														<a
-															href="./?name=cornrow-functions"
+															href={source + "cornrows-functions"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -277,7 +273,7 @@ export function NavSecondary({
 															<span className="truncate">Functions</span>
 														</a>
 														<a
-															href="./?name=cornrow-variables"
+															href={source + "cornrows-variables"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -285,7 +281,7 @@ export function NavSecondary({
 															<span className="truncate">Variables</span>
 														</a>
 														<a
-															href="./?name=cornrow-conditionals"
+															href={source + "cornrows-conditionals"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -295,12 +291,12 @@ export function NavSecondary({
 													</div>
 												</div>
 
-												{/* Pre-Columbian Pyramids Section */}
+												{/* Pre-Columbian Pyramids Section
 												<div>
 													<h3 className="text-sm font-semibold text-foreground mb-2 px-3">Pre-Columbian Pyramids</h3>
 													<div className="space-y-1">
 														<a
-															href="./?name=precolumbian-pyramids-main"
+															href={source + "precolumbian-pyramids-main"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -308,14 +304,14 @@ export function NavSecondary({
 															<span className="truncate">Main</span>
 														</a>
 													</div>
-												</div>
+												</div> */}
 
 												{/* Quilting Section */}
 												<div>
 													<h3 className="text-sm font-semibold text-foreground mb-2 px-3">Quilting</h3>
 													<div className="space-y-1">
 														<a
-															href="./?name=quilting-loops"
+															href={source + "quilting-loops"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -323,7 +319,7 @@ export function NavSecondary({
 															<span className="truncate">Loops</span>
 														</a>
 														<a
-															href="./?name=quilting-parameters"
+															href={source + "quilting-parameters"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -331,7 +327,7 @@ export function NavSecondary({
 															<span className="truncate">Params</span>
 														</a>
 														<a
-															href="./?name=quilting-functions"
+															href={source + "quilting-functions"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -339,7 +335,7 @@ export function NavSecondary({
 															<span className="truncate">Functions</span>
 														</a>
 														<a
-															href="./?name=quilting-variables"
+															href={source + "quilting-variables"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -347,7 +343,7 @@ export function NavSecondary({
 															<span className="truncate">Variables</span>
 														</a>
 														<a
-															href="./?name=quilting-conditionals"
+															href={source + "quilting-conditionals"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -355,7 +351,7 @@ export function NavSecondary({
 															<span className="truncate">Conditionals</span>
 														</a>
 														<a
-															href="./?name=quilting-anishinaabe"
+															href={source + "quilting-anishinaabe"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -363,7 +359,7 @@ export function NavSecondary({
 															<span className="truncate">Anishinaabe</span>
 														</a>
 														<a
-															href="./?name=quilting-gees"
+															href={source + "quilting-gees"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -371,7 +367,7 @@ export function NavSecondary({
 															<span className="truncate">Gee's Bend</span>
 														</a>
 														<a
-															href="./?name=quilting-lakota"
+															href={source + "quilting-lakota"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -386,7 +382,7 @@ export function NavSecondary({
 													<h3 className="text-sm font-semibold text-foreground mb-2 px-3">Tooled Leather</h3>
 													<div className="space-y-1">
 														<a
-															href="./?name=tooled-leather-loops"
+															href={source + "tooled-leather-loops"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -394,7 +390,7 @@ export function NavSecondary({
 															<span className="truncate">Loops</span>
 														</a>
 														<a
-															href="./?name=tooled-leather-parameters"
+															href={source + "tooled-leather-parameters"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -402,7 +398,7 @@ export function NavSecondary({
 															<span className="truncate">Params</span>
 														</a>
 														<a
-															href="./?name=tooled-leather-functions"
+															href={source + "tooled-leather-functions"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -410,7 +406,7 @@ export function NavSecondary({
 															<span className="truncate">Functions</span>
 														</a>
 														<a
-															href="./?name=tooled-leather-variables"
+															href={source + "tooled-leather-variables"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -418,7 +414,7 @@ export function NavSecondary({
 															<span className="truncate">Variables</span>
 														</a>
 														<a
-															href="./?name=tooled-leather-conditionals"
+															href={source + "tooled-leather-conditionals"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -433,7 +429,7 @@ export function NavSecondary({
 													<h3 className="text-sm font-semibold text-foreground mb-2 px-3">WHTE</h3>
 													<div className="space-y-1">
 														<a
-															href="./?name=whte-en"
+															href={source + "whte-en"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -441,7 +437,7 @@ export function NavSecondary({
 															<span className="truncate">English</span>
 														</a>
 														<a
-															href="./?name=whte-es"
+															href={source + "whte-es"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -449,7 +445,7 @@ export function NavSecondary({
 															<span className="truncate">Spanish</span>
 														</a>
 														<a
-															href="./?name=whte-bp"
+															href={source + "whte-bp"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -464,7 +460,7 @@ export function NavSecondary({
 													<h3 className="text-sm font-semibold text-foreground mb-2 px-3">Yarn Arts</h3>
 													<div className="space-y-1">
 														<a
-															href="./?name=yarnarts-rectangular"
+															href={source + "yarnarts-rectangular"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -472,7 +468,7 @@ export function NavSecondary({
 															<span className="truncate">Rectangular</span>
 														</a>
 														<a
-															href="./?name=yarnarts-circular"
+															href={source + "yarnarts-circular"}
 															type="button"
 															className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground text-muted-foreground"
 															style={{ outline: "none" }}>
@@ -488,7 +484,7 @@ export function NavSecondary({
 							);
 						} else {
 							return (
-								<SidebarMenuItem key={item.title}>
+								<SidebarMenuItem key={item.title} className={item.title === "Get Help" ? "help-step" : ""}>
 									<SidebarMenuButton asChild>
 										<a href={item.url}>
 											<item.icon />

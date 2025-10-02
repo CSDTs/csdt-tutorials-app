@@ -18,13 +18,12 @@ type CSnapProps = {
 
 export const CSnap = () => {
 	const csnap = useRef<HTMLIFrameElement>(null);
-	const { tutorial } = useTutorial();
+	const { tutorial, ide, setIde } = useTutorial();
 	const [ready, setReady] = useState(false);
-	const [ide, setIde] = useState<any>(null);
 
 	const url = tutorial ? getCSnapBase(tutorial) : null;
 
-	const source = `/csnap-pro/index.html`;
+	const source = import.meta.env.PROD ? `/csnap_pro/index.html` : `/csnap-pro/index.html`;
 
 	useCSnapBase(ide, url, ready, setReady);
 	useWhitelist(ide);
