@@ -2,7 +2,6 @@ export const QuiltingFunctionsData = {
 	title: "Functions in Quilting",
 	tool: "Quilting",
 	prefix: "quilting/functions/",
-	base: "base.xml",
 
 	steps: [
 		{

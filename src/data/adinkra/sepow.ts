@@ -2,7 +2,6 @@ export const AdinkraSepowData = {
 	title: "Creating Sepow",
 	tool: "Adinkra",
 	prefix: "adinkra/sepow/",
-	base: "base.xml",
 	globalModifiers: ["enableSinglePalette", "disableTutorialTabs"],
 
 	steps: [

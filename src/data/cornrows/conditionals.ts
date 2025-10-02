@@ -2,7 +2,7 @@ export const CornrowConditionalsData = {
 	title: "Conditionals in Cornrow Curves",
 	tool: "Cornrow Curves",
 	prefix: "cornrows/conditionals/",
-	base: "base.xml",
+
 	steps: [
 		{
 			title: "Setting up Your Script",

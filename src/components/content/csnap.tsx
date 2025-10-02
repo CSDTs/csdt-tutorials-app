@@ -23,7 +23,9 @@ export const CSnap = () => {
 
 	const url = tutorial ? getCSnapBase(tutorial) : null;
 
-	const source = import.meta.env.PROD ? `/csnap_pro/index.html` : `/csnap-pro/index.html`;
+	const source = import.meta.env.PROD
+		? `/csnap_pro/index.html${tutorial?.language ? `?lang=${tutorial.language}` : "?lang=en"}`
+		: `/csnap-pro/index.html${tutorial?.language ? `?lang=${tutorial.language}` : "?lang=en"}`;
 
 	useCSnapBase(ide, url, ready, setReady);
 	useWhitelist(ide);

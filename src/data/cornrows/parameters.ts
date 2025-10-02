@@ -2,7 +2,7 @@ export const CornrowParamsData = {
 	title: "Parameters in Cornrow Curves",
 	tool: "Cornrow Curves",
 	prefix: "cornrows/parameters/",
-	base: "base.xml",
+
 	// core: ["receiveGo", "gotoXY", "pointAtAngle", "setScale", "clear"],
 
 	steps: [

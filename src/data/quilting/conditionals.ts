@@ -2,7 +2,6 @@ export const QuiltingConditionalsData = {
 	title: "Conditionals in Quilting",
 	tool: "Quilting",
 	prefix: "quilting/conditionals/",
-	base: "base.xml",
 
 	steps: [
 		{

@@ -2,7 +2,7 @@ export const BeadLoomData = {
 	title: "Programming Bead Loom",
 	tool: "Bead Loom",
 	prefix: "beadloom/main/",
-	base: "base.xml",
+
 	// globalModifiers: ["enableSinglePalette", "disableSinglePaletteButtons", "disableTutorialTabs"],
 
 	steps: [

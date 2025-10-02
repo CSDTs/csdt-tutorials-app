@@ -2,7 +2,7 @@ export const TooledLeatherFunctionsData = {
 	title: "Functions in Tooled Leather",
 	tool: "Tooled Leather",
 	prefix: "tooledleather/functions/",
-	base: "tool-functions-base.xml",
+
 	steps: [
 		{
 			title: "Getting Started",

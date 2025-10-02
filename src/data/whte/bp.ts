@@ -2,7 +2,8 @@ export const WhteBpData = {
 	title: "Céu Tecido, Terra Emaranhada",
 	tool: "Céu Tecido, Terra Emaranhada",
 	prefix: "whte/bp/",
-	base: "whte_main_base_en.xml",
+	globalModifiers: ["enableSinglePalette", "disableTutorialTabs"],
+	language: "pt_BR",
 	steps: [
 		{
 			title: "Mu Primeiro Programa",

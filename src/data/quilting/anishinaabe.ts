@@ -2,7 +2,7 @@ export const AnishinaabeQuiltingData = {
 	title: "Anishinaabe Quilting",
 	tool: "Quilting",
 	prefix: "quilting/anishinaabe/",
-	base: "base.xml",
+
 	globalModifiers: ["enableSinglePalette"],
 
 	steps: [

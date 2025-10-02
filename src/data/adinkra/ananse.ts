@@ -2,7 +2,7 @@ export const AdinkraAnanseData = {
 	title: "Creating Ananse",
 	tool: "Adinkra",
 	prefix: "adinkra/ananse/",
-	base: "base.xml",
+
 	globalModifiers: ["enableSinglePalette", "disableTutorialTabs"],
 
 	steps: [

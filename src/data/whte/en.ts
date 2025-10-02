@@ -1,8 +1,9 @@
 export const WhteEnData = {
 	title: "Woven Heaven, Tangled Earth",
 	tool: "Woven Heaven, Tangled Earth",
-	prefix: "whte/main/",
-	base: "whte_main_base_en.xml",
+	prefix: "whte/en/",
+	globalModifiers: ["enableSinglePalette", "disableTutorialTabs"],
+	language: "es",
 	steps: [
 		{
 			title: "My First Program",

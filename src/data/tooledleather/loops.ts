@@ -2,7 +2,7 @@ export const TooledLeatherLoopsData = {
 	title: "Loops in Tooled Leather",
 	tool: "Tooled Leather",
 	prefix: "tooledleather/loops/",
-	base: "tool-loops-base.xml",
+
 	core: ["receiveGo", "gotoXY", "pointAtAngle", "setScale", "clear", "doStamp", "doRepeat", "translatePercent"],
 	globalModifiers: ["enableSinglePalette", "disableTutorialTabs", "disableSinglePaletteButtons"],
 	steps: [

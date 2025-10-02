@@ -2,7 +2,7 @@ export const TooledLeatherConditionalsData = {
 	title: "Conditionals in Tooled Leather",
 	tool: "Tooled Leather",
 	prefix: "tooledleather/conditionals/",
-	base: "tool-conditionals-base.xml",
+
 	steps: [
 		{
 			title: "Getting Started",

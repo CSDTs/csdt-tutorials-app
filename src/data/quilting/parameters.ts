@@ -2,7 +2,7 @@ export const QuiltingParamsData = {
 	title: "Parameters in Quilting",
 	tool: "Quilting",
 	prefix: "quilting/parameters/",
-	base: "base.xml",
+
 	core: ["receiveGo", "gotoXY", "pointAtAngle", "setScale", "clear", "doStamp", "doSwitchToCostume"],
 	steps: [
 		{

@@ -2,7 +2,7 @@ export const QuiltingGeesData = {
 	title: "Gee's Bend Quilting",
 	tool: "Quilting",
 	prefix: "quilting/gees/",
-	base: "base.xml",
+
 	globalModifiers: ["enableSinglePalette", "disableTutorialTabs"],
 
 	steps: [

@@ -2,7 +2,6 @@ export const QuiltingLakotaData = {
 	title: "Lakota Quilting",
 	tool: "Quilting",
 	prefix: "quilting/lakota/",
-	base: "base.xml",
 
 	steps: [
 		{

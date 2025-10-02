@@ -1,9 +1,0 @@
-# Create 'radius' and 'circ' variables for the script
-
-- Start with a blank template: one `When flag clicked` and one `clear` block
-- Attach the purple `Set size to __` block and set it to 7%
-- Go to the brown variable menu and click `make new variable`
-- In the name variable window, type `radius`
-- Do the same thing for a `circ` variable
-- Drag in and attach the brown `set ___ to __` twice and set the first to `Radius` and the second to `circ` using the drop down menu in the block.
-- Drag in a yellow `loop` block and attach it to the bottom. Let's fill it in using our variables!

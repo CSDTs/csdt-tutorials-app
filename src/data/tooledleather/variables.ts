@@ -2,7 +2,7 @@ export const TooledLeatherVarsData = {
 	title: "Variables in Tooled Leather",
 	tool: "Tooled Leather",
 	prefix: "tooledleather/variables/",
-	base: "tool-vars-base.xml",
+
 	steps: [
 		{
 			title: "Getting Started",

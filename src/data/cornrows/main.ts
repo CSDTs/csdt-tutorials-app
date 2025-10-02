@@ -2,7 +2,7 @@ export const CornrowMainData = {
 	title: "Cornrow Curves Main",
 	tool: "Cornrow Curves",
 	prefix: "cornrows/main/",
-	base: "base.xml",
+
 	core: [
 		"receiveGo",
 		"gotoXY",

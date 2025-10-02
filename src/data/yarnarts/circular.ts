@@ -2,7 +2,6 @@ export const CircularYarnArtsData = {
 	title: "Circular Yarn Arts",
 	tool: "Yarn Arts",
 	prefix: "yarnarts/circular/",
-	base: "base.xml",
 
 	steps: [
 		{

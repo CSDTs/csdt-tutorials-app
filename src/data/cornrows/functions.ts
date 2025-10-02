@@ -2,7 +2,7 @@ export const CornrowFunctionsData = {
 	title: "Functions in Cornrow Curves",
 	tool: "Cornrow Curves",
 	prefix: "cornrows/functions/",
-	base: "base.xml",
+
 	steps: [
 		{
 			title: "Setting up Your Script",

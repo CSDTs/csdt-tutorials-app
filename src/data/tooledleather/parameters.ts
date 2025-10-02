@@ -2,7 +2,7 @@ export const TooledLeatherParamsData = {
 	title: "Parameters in Tooled Leather",
 	tool: "Tooled Leather",
 	prefix: "tooledleather/parameters/",
-	base: "tool-params-base_v2.xml",
+
 	core: ["receiveGo", "gotoXY", "pointAtAngle", "setScale", "clear", "doSwitchToCostume", "doStamp"],
 	steps: [
 		{

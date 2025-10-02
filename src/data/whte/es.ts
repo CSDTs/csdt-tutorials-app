@@ -2,7 +2,8 @@ export const WhteEsData = {
 	title: "Cielo Tejido, Tierra Enredada",
 	tool: "Cielo Tejido, Tierra Enredada",
 	prefix: "whte/es/",
-	base: "whte_main_base_es.xml",
+	globalModifiers: ["enableSinglePalette", "disableTutorialTabs"],
+	language: "es",
 	steps: [
 		{
 			title: "Mi primer programa",

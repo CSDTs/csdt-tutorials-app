@@ -2,7 +2,7 @@ export const AdinkraMpuannumData = {
 	title: "Creating Mpuannum",
 	tool: "Adinkra",
 	prefix: "adinkra/mpuannum/",
-	base: "base.xml",
+
 	globalModifiers: ["enableSinglePalette", "disableTutorialTabs"],
 
 	steps: [

@@ -2,7 +2,6 @@ export const RectangularYarnArtsData = {
 	title: "Rectangular Yarn Arts",
 	tool: "Yarn Arts",
 	prefix: "yarnarts/rect/",
-	base: "base.xml",
 
 	steps: [
 		{

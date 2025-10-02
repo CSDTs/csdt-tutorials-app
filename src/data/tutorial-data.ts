@@ -34,7 +34,8 @@ export type Tutorial = {
 	title: string;
 	tool: string;
 	prefix: string;
-	base: string;
+	base?: string;
+	language?: string;
 	globalModifiers: string[];
 	steps: TutorialStep[];
 	core: string[];

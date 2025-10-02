@@ -25,3 +25,5 @@ dist-ssr
 
 public/csnap-pro/
 .vscode/
+
+aws-assets/

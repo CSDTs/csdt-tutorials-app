@@ -2,7 +2,6 @@ export const QuiltingLoopsData = {
 	title: "Loops in Quilting",
 	tool: "Quilting",
 	prefix: "quilting/loops/",
-	base: "base.xml",
 
 	steps: [
 		{

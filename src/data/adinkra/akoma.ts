@@ -2,7 +2,6 @@ export const AdinkraAkomaData = {
 	title: "Creating Akoma",
 	tool: "Adinkra",
 	prefix: "adinkra/akoma/",
-	base: "base.xml",
 	globalModifiers: ["enableSinglePalette", "disableTutorialTabs"],
 
 	steps: [

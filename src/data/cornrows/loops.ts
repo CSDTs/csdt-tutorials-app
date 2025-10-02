@@ -2,7 +2,7 @@ export const CornrowLoopsData = {
 	title: "Loops in Cornrow Curves",
 	tool: "Cornrow Curves",
 	prefix: "cornrows/loops/",
-	base: "base.xml",
+
 	core: [
 		"receiveGo",
 		"gotoXY",

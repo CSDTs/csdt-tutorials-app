@@ -2,7 +2,6 @@ export const QuiltingVarsData = {
 	title: "Variables in Quilting",
 	tool: "Quilting",
 	prefix: "quilting/variables/",
-	base: "base.xml",
 
 	steps: [
 		{
