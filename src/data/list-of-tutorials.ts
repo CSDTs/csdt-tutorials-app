@@ -40,6 +40,18 @@ export const tutorials = [
 		title: "Bead Loom",
 		category: "Bead Loom",
 	},
+	{
+		id: "beadloom-math",
+		name: "beadloom-math",
+		title: "Bead Loom - Math",
+		category: "Bead Loom",
+	},
+	{
+		id: "beadloom-howto",
+		name: "beadloom-howto",
+		title: "Bead Loom - How To",
+		category: "Bead Loom",
+	},
 
 	// Cornrows
 	{
@@ -76,6 +88,18 @@ export const tutorials = [
 		id: "cornrows-conditionals",
 		name: "cornrows-conditionals",
 		title: "Cornrows - Conditionals",
+		category: "Cornrows",
+	},
+	{
+		id: "cornrows-create",
+		name: "cornrows-create",
+		title: "Cornrows - Create",
+		category: "Cornrows",
+	},
+	{
+		id: "cornrows-position",
+		name: "cornrows-position",
+		title: "Cornrows - Position",
 		category: "Cornrows",
 	},
 

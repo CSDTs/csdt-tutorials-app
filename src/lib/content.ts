@@ -1,6 +1,8 @@
 import type { Tutorial } from "@/data/tutorial-data";
 
-const STORAGE_URL = "https://csdt-media-s3.s3.us-east-2.amazonaws.com/tutorials/assets/";
+const STORAGE_URL = import.meta.env.PROD
+	? "https://csdt-media-s3.s3.us-east-2.amazonaws.com/tutorials/assets/"
+	: "/aws-assets/assets/";
 
 const prefixContent = (content: string, prefix: string, index: number) => {
 	if (content === "video") {
@@ -42,4 +44,8 @@ export const getCSnapBase = (tutorial: Tutorial) => {
 	if (!tutorial.base) return `${STORAGE_URL}${tutorial.prefix}base.xml`;
 
 	return `${STORAGE_URL}${tutorial.prefix}${tutorial.base}`;
+};
+
+export const getAssetContent = (contentUrl: string) => {
+	return `${STORAGE_URL}${contentUrl}`;
 };

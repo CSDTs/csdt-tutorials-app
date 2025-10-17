@@ -194,7 +194,7 @@ export const NumericStepSelector = ({ children }: { children?: React.ReactNode }
 			)}
 
 			{/* Content */}
-			<div className="flex flex-col gap-4">{children}</div>
+			<div className="flex flex-col gap-4 w-full">{children}</div>
 
 			{/* Current Step Title */}
 			{tutorial?.steps[currentStepIndex] && (

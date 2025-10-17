@@ -8,6 +8,7 @@ import { SiteHeader } from "@/layout/site-header";
 import { TutorialClient } from "./components/content/tutorial-client";
 
 import { CSnap } from "./components/content/csnap";
+import { StepComponent } from "./components/content/step-component";
 // import { NextStepsDialog } from "./components/content/next-steps-dialog";
 import { WalkthroughDialog } from "./components/content/walkthrough-dialog";
 
@@ -51,7 +52,9 @@ export default function App() {
 									{!tutorialData && <BlankTutorialSelection />}
 									{tutorialData && (
 										<>
-											<CSnap />
+											{tutorialData?.componentOverride && <StepComponent />}
+
+											{!tutorialData?.componentOverride && <CSnap />}
 										</>
 									)}
 									{/* <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">

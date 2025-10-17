@@ -4,11 +4,15 @@ import { AdinkraMpuannumData } from "./adinkra/mpuannum";
 import { AdinkraSepowData } from "./adinkra/sepow";
 import { AnishinaabeArcsData } from "./anishinaabe-arcs/main";
 import { BeadLoomData } from "./beadloom";
+import { BeadLoomHowToData } from "./beadloom/how-to";
+import { BeadLoomMathData } from "./beadloom/math";
 import { CornrowConditionalsData } from "./cornrows/conditionals";
+import { CornrowsCreateData } from "./cornrows/create";
 import { CornrowFunctionsData } from "./cornrows/functions";
 import { CornrowLoopsData } from "./cornrows/loops";
 import { CornrowMainData } from "./cornrows/main";
 import { CornrowParamsData } from "./cornrows/parameters";
+import { CornrowsPositionData } from "./cornrows/position";
 import { CornrowVarsData } from "./cornrows/variables";
 import { PreColumbianPyramidsData } from "./precolumbian-pyramids/main";
 import { AnishinaabeQuiltingData } from "./quilting/anishinaabe";
@@ -39,6 +43,7 @@ export type Tutorial = {
 	globalModifiers: string[];
 	steps: TutorialStep[];
 	core: string[];
+	componentOverride?: boolean;
 };
 
 export type TutorialStep = {
@@ -48,6 +53,7 @@ export type TutorialStep = {
 	software?: string;
 	whitelist: string[];
 	modifiers: string[];
+	slide?: string;
 };
 
 export const fetchTutorialData = (tutorialUrlParam: string) => {
@@ -59,12 +65,16 @@ export const fetchTutorialData = (tutorialUrlParam: string) => {
 		"anishinaabe-arcs-main": AnishinaabeArcsData,
 		"precolumbian-pyramids-main": PreColumbianPyramidsData,
 		"beadloom-main": BeadLoomData,
+		"beadloom-math": BeadLoomMathData,
+		"beadloom-howto": BeadLoomHowToData,
 		"cornrows-main": CornrowMainData,
 		"cornrows-loops": CornrowLoopsData,
 		"cornrows-parameters": CornrowParamsData,
 		"cornrows-functions": CornrowFunctionsData,
 		"cornrows-variables": CornrowVarsData,
 		"cornrows-conditionals": CornrowConditionalsData,
+		"cornrows-create": CornrowsCreateData,
+		"cornrows-position": CornrowsPositionData,
 		"quilting-loops": QuiltingLoopsData,
 		"quilting-parameters": QuiltingParamsData,
 		"quilting-functions": QuiltingFunctionsData,

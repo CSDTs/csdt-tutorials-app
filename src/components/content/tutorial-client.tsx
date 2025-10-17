@@ -55,7 +55,9 @@ const steps: StepType[] = [
 			<Card>
 				<CardContent>
 					<p className="">
-						This is CSnap. You create your scripts here. Once finished, you click on the green flag to run your code.
+						This is your main work area. Most of the time you will be using CSnap to create your scripts. Once finished,
+						you click on the green flag to run your code. Some of the time, you will playing around with custom mini
+						games and simulations that are not CSnap. Or just have reading material.
 					</p>
 				</CardContent>
 			</Card>
@@ -89,9 +91,7 @@ const steps: StepType[] = [
 		content: () => (
 			<Card>
 				<CardContent>
-					<p className="">
-						If you find yourself struggling with using CSnap, check out our help section here for more information.
-					</p>
+					<p className="">If you find yourself struggling, check out our help section here for more information.</p>
 				</CardContent>
 			</Card>
 		),
