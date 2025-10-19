@@ -33,9 +33,9 @@ export const CornrowsPositionData = {
 		{
 			title: "Next Steps",
 			content: ["nextSteps"],
-			background: "cornrowcurves/index.html",
+			background: "culture/cornrowcurves/index.html",
 			slide: "cornrows-position-final",
-			software: "cornrowcurves/software.html",
+			software: "apps/CornrowCurves/cornrows.html",
 		},
 	],
 };

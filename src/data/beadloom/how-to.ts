@@ -24,7 +24,7 @@ export const BeadLoomHowToData = {
 		{
 			title: "Next Steps",
 			content: ["nextSteps"],
-			background: "beadloom/index.html",
+			background: "culture/beadloom/index.html",
 			slide: "beadloom-how-to-final",
 			software: "apps/VirtualBeadloom/beadloom.html",
 		},

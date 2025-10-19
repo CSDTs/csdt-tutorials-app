@@ -4,7 +4,7 @@ export const BeadLoomHowTo3 = () => {
 	const imageUrl1 = getAssetContent("beadloom/howto/howto-6.jpg");
 	const imageUrl2 = getAssetContent("beadloom/howto/howto-7.jpg");
 	return (
-		<div id="p2" className="w-full bg-white rounded-lg shadow p-6">
+		<div id="p2" className="w-full dark:bg-accent bg-white rounded-lg shadow p-6">
 			<div className="w-full">
 				<div className="w-full">
 					<h1 className="text-2xl font-bold mb-1">How to Use the Bead Loom</h1>

@@ -6,7 +6,7 @@ export const BeadLoomHowTo1 = () => {
 	const imageUrl3 = getAssetContent("beadloom/howto/howto-3.jpg");
 
 	return (
-		<div id="p0" className="w-full bg-white rounded-lg shadow p-6">
+		<div id="p0" className="w-full dark:bg-accent bg-white rounded-lg shadow p-6">
 			<div className="w-full">
 				<div className="w-full">
 					<h1 className="text-2xl font-bold mb-1">How to Use the Bead Loom</h1>
@@ -26,9 +26,11 @@ export const BeadLoomHowTo1 = () => {
 							<div className="flex flex-col gap-4 flex-1 min-w-[270px]">
 								<p>
 									There are several tools for placing beads on the virtual loom. In each case you use the{" "}
-									<span className="font-mono px-1 py-0.5 rounded bg-gray-100 border border-gray-200">tab</span> key or
-									the mouse to move your cursor to the field for entering the coordinates, then you enter them, and then
-									press the button for the shape tool. The point tool places a single bead:
+									<span className="font-mono px-1 py-0.5 rounded dark:bg-gray-800 bg-gray-100 border border-gray-200">
+										tab
+									</span>{" "}
+									key or the mouse to move your cursor to the field for entering the coordinates, then you enter them,
+									and then press the button for the shape tool. The point tool places a single bead:
 								</p>
 								<div className="flex items-center justify-center w-full">
 									<img src={imageUrl2} alt="Point Tool" className="rounded-md max-w-full w-auto h-auto" />

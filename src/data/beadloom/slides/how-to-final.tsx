@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export const BeadLoomHowToFinal = () => {
 	return (
-		<div id="p3" className="w-full bg-white rounded-lg shadow p-6">
+		<div id="p3" className="w-full dark:bg-accent bg-white rounded-lg shadow p-6">
 			<div className="w-full">
 				<div className="w-full">
 					<h1 className="text-2xl font-bold mb-1">How to Use the Bead Loom</h1>
@@ -27,7 +27,7 @@ export const BeadLoomHowToFinal = () => {
 								<a
 									href={import.meta.env.VITE_BACKGROUND_PREFIX + `tutorials/index.html?name=beadloom-math`}
 									className="w-full">
-									<Button className="w-full" size="lg" variant="secondary">
+									<Button className="w-full" size="lg" variant="outline">
 										Complete the Mini Math Game
 									</Button>
 								</a>

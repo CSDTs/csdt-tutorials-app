@@ -21,7 +21,7 @@ export const CornrowsCreate1 = () => {
 	};
 
 	return (
-		<div id="p0" className="w-full bg-white rounded-lg shadow p-6 flex flex-col md:flex-row gap-8">
+		<div id="p0" className="w-full dark:bg-accent bg-white  rounded-lg shadow p-6 flex flex-col md:flex-row gap-8">
 			<div className="flex-1 flex flex-col">
 				<h1 className="text-2xl font-bold mb-1">How to Create Braids</h1>
 				<p className="text-lg mb-3">

@@ -472,6 +472,27 @@ export class Braid {
 		return Math.sqrt(dx * dx + dy * dy) <= this._size / 2;
 	}
 
+	// Getter methods for accessing braid properties
+	get x(): number {
+		return this._x;
+	}
+
+	get y(): number {
+		return this._y;
+	}
+
+	get size(): number {
+		return this._size;
+	}
+
+	get rotation(): number {
+		return this._rotation;
+	}
+
+	get reflection(): string {
+		return this._reflection;
+	}
+
 	/**Sets each stamp to a color based on string
 	 * @param message
 	 *
@@ -529,25 +550,6 @@ export class Braid {
 	static hideEncryptedOption: boolean = true;
 
 	// Getters for private properties
-	get size(): number {
-		return this._size;
-	}
-
-	get x(): number {
-		return this._x;
-	}
-
-	get y(): number {
-		return this._y;
-	}
-
-	get rotation(): number {
-		return this._rotation;
-	}
-
-	get reflection(): string {
-		return this._reflection;
-	}
 
 	get midpoint(): Point {
 		return this._midpoint;

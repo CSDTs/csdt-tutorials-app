@@ -22,8 +22,8 @@ export const AdinkraAnanseData = {
 		{
 			title: "Next Steps",
 			content: ["nextSteps", "outcome"],
-			background: "adinkra/index.html",
-			software: "adinkra/software.html",
+			background: "culture/adinkra/index.html",
+			software: "culture/adinkra/software.html",
 		},
 	],
 };

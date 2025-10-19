@@ -35,8 +35,8 @@ export const CircularYarnArtsData = {
 		{
 			title: "Next Steps",
 			content: ["nextSteps", "outcome"],
-			background: "yarnarts/index.html",
-			software: "yarnarts/software.html",
+			background: "culture/yarnarts/index.html",
+			software: "culture/yarnarts/software.html",
 		},
 	],
 };

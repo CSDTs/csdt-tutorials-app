@@ -74,7 +74,7 @@ export const WalkthroughDialog = () => {
 
 	const launchTutorials = () => {
 		if (import.meta.env.PROD) {
-			window.location.href = "/assets/tutorials/index.html";
+			window.location.href = "/tutorials/index.html";
 		} else {
 			window.location.href = "/";
 		}

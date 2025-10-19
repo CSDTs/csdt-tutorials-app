@@ -53,7 +53,7 @@ export const BeadLoomMathData = {
 		{
 			title: "Next Steps",
 			content: ["nextSteps", "outcome"],
-			background: "beadloom/index.html",
+			background: "culture/beadloom/index.html",
 			slide: "beadloom-math-game-final",
 			software: "apps/VirtualBeadloom/beadloom.html",
 		},

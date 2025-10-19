@@ -39,9 +39,9 @@ export const CornrowsCreateData = {
 		{
 			title: "Next Steps",
 			content: ["nextSteps"],
-			background: "cornrowcurves/index.html",
+			background: "culture/cornrowcurves/index.html",
 			slide: "cornrows-create-final",
-			software: "cornrowcurves/software.html",
+			software: "apps/CornrowCurves/cornrows.html",
 		},
 	],
 };

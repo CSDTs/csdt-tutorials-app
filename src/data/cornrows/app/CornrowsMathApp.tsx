@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button } from "@/components/ui/button";
 import {
 	DropdownMenu,
@@ -481,7 +482,7 @@ const CornrowsMathAppInner: React.FC<CornrowsMathAppProps> = ({ initialSettings,
 		<div className="container">
 			{" "}
 			{/* Canvas Container */}
-			<div id="canvas-container" className="mt-4 relative">
+			<div id="canvas-container" className="mt-4 relative bg-white">
 				{tutorialState.showOptionsNav && (
 					<div id="options-nav" className="row">
 						<div id="more-options" className="mx-2 ml-auto">

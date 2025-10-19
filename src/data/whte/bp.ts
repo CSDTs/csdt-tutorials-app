@@ -52,8 +52,8 @@ export const WhteBpData = {
 		{
 			title: "Próximos Passos",
 			content: ["nextSteps", "outcome"],
-			background: "whte/index.html",
-			software: "whte/software.html",
+			background: "culture/whte/index.html",
+			software: "applications/67/run",
 		},
 	],
 };

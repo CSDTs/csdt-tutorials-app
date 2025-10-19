@@ -40,8 +40,8 @@ export const PreColumbianPyramidsData = {
 		{
 			title: "Next Steps",
 			content: ["nextSteps", "outcome"],
-			background: "precolumbianpyramid/index.html",
-			software: "/applications/49/run",
+			background: "culture/precolumbian-pyramids/index.html",
+			software: "applications/49/run",
 		},
 	],
 };

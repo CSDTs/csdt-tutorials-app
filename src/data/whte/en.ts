@@ -53,8 +53,8 @@ export const WhteEnData = {
 			title: "Next Steps",
 			content: ["nextSteps", "outcome"],
 			outcome: "whte-main-tut.png",
-			background: "whte/index.html",
-			software: "whte/software.html",
+			background: "culture/whte/index.html",
+			software: "applications/67/run",
 		},
 	],
 };

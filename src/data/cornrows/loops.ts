@@ -46,8 +46,8 @@ export const CornrowLoopsData = {
 		{
 			title: "Next Steps",
 			content: ["nextSteps", "outcome"],
-			background: "cornrowcurves/index.html",
-			software: "cornrowcurves/software.html",
+			background: "culture/cornrowcurves/index.html",
+			software: "culture/cornrowcurves/software.html",
 		},
 	],
 };

@@ -31,8 +31,8 @@ export const QuiltingConditionalsData = {
 		{
 			title: "Next Steps",
 			content: ["nextSteps", "outcome"],
-			background: "quilting/index.html",
-			software: "quilting/software.html",
+			background: "culture/quilting/index.html",
+			software: "culture/quilting/software.html",
 		},
 	],
 };

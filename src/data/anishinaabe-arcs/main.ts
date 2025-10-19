@@ -56,8 +56,8 @@ export const AnishinaabeArcsData = {
 		{
 			title: "Next Steps",
 			content: ["nextSteps", "outcome"],
-			background: "anishinaabearcs/index.html",
-			software: "/applications/38/run",
+			background: "culture/anishinaabe-arcs/index.html",
+			software: "applications/38/run",
 		},
 	],
 };

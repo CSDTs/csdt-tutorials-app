@@ -61,8 +61,8 @@ export const TooledLeatherLoopsData = {
 		{
 			title: "Next Steps",
 			content: ["nextSteps", "outcome"],
-			background: "tooledleather/index.html",
-			software: "tooledleather/software.html",
+			background: "culture/tooledleather/index.html",
+			software: "culture/tooledleather/software.html",
 		},
 	],
 };
